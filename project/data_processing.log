@@ -1,0 +1,118 @@
+2025-01-31 05:50:24,378 - INFO - Successfully loaded data from C:\Users\User\AppData\Local\Temp\tmpmdetmtw5.csv. Shape: (43824, 42)
+2025-01-31 05:50:24,379 - INFO - Starting data cleaning process...
+2025-01-31 05:50:24,558 - INFO - Removed 0 duplicate rows
+2025-01-31 05:50:24,565 - INFO - Handling missing values...
+2025-01-31 05:50:24,723 - ERROR - Error in data cleaning: single positional indexer is out-of-bounds
+2025-01-31 05:50:24,723 - ERROR - Error processing data: single positional indexer is out-of-bounds
+2025-01-31 05:56:41,212 - INFO - Successfully loaded data from C:\Users\User\AppData\Local\Temp\tmpw5409qh5.csv. Shape: (43824, 42)
+2025-01-31 05:56:41,215 - INFO - Starting data cleaning process...
+2025-01-31 05:56:41,727 - INFO - Data cleaning completed. Shape: (43824, 42)
+2025-01-31 05:56:41,732 - INFO - Starting feature engineering...
+2025-01-31 05:56:42,011 - INFO - Feature engineering completed successfully
+2025-01-31 05:56:42,017 - INFO - Preparing features for modeling...
+2025-01-31 05:56:42,041 - INFO - Feature preparation completed. Shape: (43824, 5)
+2025-01-31 05:56:42,041 - INFO - Training anomaly detection model...
+2025-01-31 05:56:45,799 - INFO - Model training completed successfully
+2025-01-31 05:56:47,605 - INFO - Generated predictions for 43824 samples
+2025-01-31 05:56:47,654 - ERROR - Error in anomaly analysis: 'DateTime'
+2025-01-31 05:56:47,655 - ERROR - Error processing data: 'DateTime'
+2025-01-31 06:02:05,422 - INFO - Successfully loaded data from C:\Users\User\AppData\Local\Temp\tmpc3j20rqw.csv. Shape: (43824, 42)
+2025-01-31 06:02:05,425 - INFO - Columns in dataset: ['Date Time Hour Beginning', 'Original Res Forecast before Lockdown', 'Residual Forecast', 'RSA Contracted Forecast', 'Dispatchable Generation', 'Residual Demand', 'RSA Contracted Demand', 'International Exports', 'International Imports', 'Thermal Generation', 'Nuclear Generation', 'Eskom Gas Generation', 'Eskom OCGT Generation', 'Hydro Water Generation', 'Pumped Water Generation', 'ILS Usage', 'Manual Load_Reduction(MLR)', 'IOS Excl ILS and MLR', 'Dispatchable IPP OCGT', 'Eskom Gas SCO', 'Eskom OCGT SCO', 'Hydro Water SCO', 'Pumped Water SCO Pumping', 'Wind', 'PV', 'CSP', 'Other RE', 'Total RE', 'Wind Installed Capacity', 'PV Installed Capacity', 'CSP Installed Capacity', 'Other RE Installed Capacity', 'Total RE Installed Capacity', 'Installed Eskom Capacity', 'Total PCLF', 'Total UCLF', 'Total OCLF', 'Total UCLF+OCLF', 'Non Comm Sentout', 'Drakensberg Gen Unit Hours', 'Palmiet Gen Unit Hours', 'Ingula Gen Unit Hours']
+2025-01-31 06:02:05,428 - WARNING - No recognizable datetime column found. Proceeding without indexing by date.
+2025-01-31 06:02:05,429 - INFO - Starting data cleaning process...
+2025-01-31 06:02:05,896 - INFO - Data cleaning completed. Shape: (43824, 42)
+2025-01-31 06:02:05,898 - INFO - Starting feature engineering...
+2025-01-31 06:02:06,087 - INFO - Feature engineering completed successfully
+2025-01-31 06:02:06,092 - INFO - Preparing features for modeling...
+2025-01-31 06:02:06,115 - INFO - Feature preparation completed. Shape: (43824, 5)
+2025-01-31 06:02:06,116 - INFO - Training anomaly detection model...
+2025-01-31 06:02:09,426 - INFO - Model training completed successfully
+2025-01-31 06:02:10,673 - INFO - Generated predictions for 43824 samples
+2025-01-31 06:02:10,712 - ERROR - Error in anomaly analysis: 'DateTime'
+2025-01-31 06:02:10,715 - ERROR - Error processing data: 'DateTime'
+2025-01-31 06:06:43,148 - INFO - Successfully loaded data from C:\Users\User\AppData\Local\Temp\tmp1ywee1rb.csv. Shape: (43824, 42)
+2025-01-31 06:06:43,150 - INFO - Columns in dataset: ['Date Time Hour Beginning', 'Original Res Forecast before Lockdown', 'Residual Forecast', 'RSA Contracted Forecast', 'Dispatchable Generation', 'Residual Demand', 'RSA Contracted Demand', 'International Exports', 'International Imports', 'Thermal Generation', 'Nuclear Generation', 'Eskom Gas Generation', 'Eskom OCGT Generation', 'Hydro Water Generation', 'Pumped Water Generation', 'ILS Usage', 'Manual Load_Reduction(MLR)', 'IOS Excl ILS and MLR', 'Dispatchable IPP OCGT', 'Eskom Gas SCO', 'Eskom OCGT SCO', 'Hydro Water SCO', 'Pumped Water SCO Pumping', 'Wind', 'PV', 'CSP', 'Other RE', 'Total RE', 'Wind Installed Capacity', 'PV Installed Capacity', 'CSP Installed Capacity', 'Other RE Installed Capacity', 'Total RE Installed Capacity', 'Installed Eskom Capacity', 'Total PCLF', 'Total UCLF', 'Total OCLF', 'Total UCLF+OCLF', 'Non Comm Sentout', 'Drakensberg Gen Unit Hours', 'Palmiet Gen Unit Hours', 'Ingula Gen Unit Hours']
+2025-01-31 06:06:43,238 - INFO - Using 'Date Time Hour Beginning' as datetime index.
+2025-01-31 06:06:43,242 - INFO - Starting data cleaning process...
+2025-01-31 06:06:43,750 - INFO - Data cleaning completed. Shape: (43824, 41)
+2025-01-31 06:06:43,752 - INFO - Starting feature engineering...
+2025-01-31 06:06:43,958 - INFO - Feature engineering completed successfully
+2025-01-31 06:06:43,961 - INFO - Preparing features for modeling...
+2025-01-31 06:06:43,984 - INFO - Feature preparation completed. Shape: (43824, 5)
+2025-01-31 06:06:43,984 - INFO - Training anomaly detection model...
+2025-01-31 06:06:47,112 - INFO - Model training completed successfully
+2025-01-31 06:06:48,405 - INFO - Generated predictions for 43824 samples
+2025-01-31 06:06:48,439 - ERROR - Error in anomaly analysis: 'DateTime'
+2025-01-31 06:06:48,440 - ERROR - Error processing data: 'DateTime'
+2025-01-31 06:07:17,793 - INFO - Successfully loaded data from data\ESK10705.csv. Shape: (43824, 42)
+2025-01-31 06:07:17,794 - INFO - Columns in dataset: ['Date Time Hour Beginning', 'Original Res Forecast before Lockdown', 'Residual Forecast', 'RSA Contracted Forecast', 'Dispatchable Generation', 'Residual Demand', 'RSA Contracted Demand', 'International Exports', 'International Imports', 'Thermal Generation', 'Nuclear Generation', 'Eskom Gas Generation', 'Eskom OCGT Generation', 'Hydro Water Generation', 'Pumped Water Generation', 'ILS Usage', 'Manual Load_Reduction(MLR)', 'IOS Excl ILS and MLR', 'Dispatchable IPP OCGT', 'Eskom Gas SCO', 'Eskom OCGT SCO', 'Hydro Water SCO', 'Pumped Water SCO Pumping', 'Wind', 'PV', 'CSP', 'Other RE', 'Total RE', 'Wind Installed Capacity', 'PV Installed Capacity', 'CSP Installed Capacity', 'Other RE Installed Capacity', 'Total RE Installed Capacity', 'Installed Eskom Capacity', 'Total PCLF', 'Total UCLF', 'Total OCLF', 'Total UCLF+OCLF', 'Non Comm Sentout', 'Drakensberg Gen Unit Hours', 'Palmiet Gen Unit Hours', 'Ingula Gen Unit Hours']
+2025-01-31 06:07:17,821 - INFO - Using 'Date Time Hour Beginning' as datetime index.
+2025-01-31 06:07:17,822 - INFO - Starting data cleaning process...
+2025-01-31 06:07:18,277 - INFO - Data cleaning completed. Shape: (43824, 41)
+2025-01-31 06:07:18,279 - INFO - Starting feature engineering...
+2025-01-31 06:07:18,438 - INFO - Feature engineering completed successfully
+2025-01-31 06:07:18,443 - INFO - Preparing features for modeling...
+2025-01-31 06:07:18,464 - INFO - Feature preparation completed. Shape: (43824, 5)
+2025-01-31 06:07:18,464 - INFO - Training anomaly detection model...
+2025-01-31 06:07:21,562 - INFO - Model training completed successfully
+2025-01-31 06:07:23,111 - INFO - Generated predictions for 43824 samples
+2025-01-31 06:07:23,154 - ERROR - Error in anomaly analysis: 'DateTime'
+2025-01-31 06:07:23,155 - ERROR - Error processing data: 'DateTime'
+2025-01-31 06:07:23,155 - ERROR - Failed to process data: 'DateTime'
+2025-01-31 11:51:54,469 - INFO - Successfully loaded data from data\ESK10705.csv. Shape: (43824, 42)
+2025-01-31 11:51:54,470 - INFO - Columns in dataset: ['Date Time Hour Beginning', 'Original Res Forecast before Lockdown', 'Residual Forecast', 'RSA Contracted Forecast', 'Dispatchable Generation', 'Residual Demand', 'RSA Contracted Demand', 'International Exports', 'International Imports', 'Thermal Generation', 'Nuclear Generation', 'Eskom Gas Generation', 'Eskom OCGT Generation', 'Hydro Water Generation', 'Pumped Water Generation', 'ILS Usage', 'Manual Load_Reduction(MLR)', 'IOS Excl ILS and MLR', 'Dispatchable IPP OCGT', 'Eskom Gas SCO', 'Eskom OCGT SCO', 'Hydro Water SCO', 'Pumped Water SCO Pumping', 'Wind', 'PV', 'CSP', 'Other RE', 'Total RE', 'Wind Installed Capacity', 'PV Installed Capacity', 'CSP Installed Capacity', 'Other RE Installed Capacity', 'Total RE Installed Capacity', 'Installed Eskom Capacity', 'Total PCLF', 'Total UCLF', 'Total OCLF', 'Total UCLF+OCLF', 'Non Comm Sentout', 'Drakensberg Gen Unit Hours', 'Palmiet Gen Unit Hours', 'Ingula Gen Unit Hours']
+2025-01-31 11:51:54,526 - INFO - Using 'Date Time Hour Beginning' as datetime index.
+2025-01-31 11:51:54,527 - INFO - Starting data cleaning process...
+2025-01-31 11:51:55,084 - INFO - Data cleaning completed. Shape: (43824, 41)
+2025-01-31 11:51:55,086 - INFO - Starting feature engineering...
+2025-01-31 11:51:55,284 - INFO - Feature engineering completed successfully
+2025-01-31 11:51:55,287 - INFO - Preparing features for modeling...
+2025-01-31 11:51:55,309 - INFO - Feature preparation completed. Shape: (43824, 5)
+2025-01-31 11:51:55,310 - INFO - Training anomaly detection model...
+2025-01-31 11:51:59,146 - INFO - Model training completed successfully
+2025-01-31 11:52:00,842 - INFO - Generated predictions for 43824 samples
+2025-01-31 11:52:00,882 - ERROR - Error in anomaly analysis: 'DateTime'
+2025-01-31 11:52:00,883 - ERROR - Error processing data: 'DateTime'
+2025-01-31 11:52:00,884 - ERROR - Failed to process data: 'DateTime'
+2025-01-31 11:59:59,264 - INFO - Successfully loaded data from C:\Users\User\AppData\Local\Temp\tmpiipagr5l.csv. Shape: (43824, 42)
+2025-01-31 11:59:59,265 - INFO - Columns in dataset: ['Date Time Hour Beginning', 'Original Res Forecast before Lockdown', 'Residual Forecast', 'RSA Contracted Forecast', 'Dispatchable Generation', 'Residual Demand', 'RSA Contracted Demand', 'International Exports', 'International Imports', 'Thermal Generation', 'Nuclear Generation', 'Eskom Gas Generation', 'Eskom OCGT Generation', 'Hydro Water Generation', 'Pumped Water Generation', 'ILS Usage', 'Manual Load_Reduction(MLR)', 'IOS Excl ILS and MLR', 'Dispatchable IPP OCGT', 'Eskom Gas SCO', 'Eskom OCGT SCO', 'Hydro Water SCO', 'Pumped Water SCO Pumping', 'Wind', 'PV', 'CSP', 'Other RE', 'Total RE', 'Wind Installed Capacity', 'PV Installed Capacity', 'CSP Installed Capacity', 'Other RE Installed Capacity', 'Total RE Installed Capacity', 'Installed Eskom Capacity', 'Total PCLF', 'Total UCLF', 'Total OCLF', 'Total UCLF+OCLF', 'Non Comm Sentout', 'Drakensberg Gen Unit Hours', 'Palmiet Gen Unit Hours', 'Ingula Gen Unit Hours']
+2025-01-31 11:59:59,318 - INFO - Using 'Date Time Hour Beginning' as datetime index.
+2025-01-31 11:59:59,319 - INFO - Starting data cleaning process...
+2025-01-31 11:59:59,904 - INFO - Data cleaning completed. Shape: (43824, 41)
+2025-01-31 11:59:59,906 - INFO - Starting feature engineering...
+2025-01-31 12:00:00,130 - INFO - Feature engineering completed successfully
+2025-01-31 12:00:00,132 - INFO - Preparing features for modeling...
+2025-01-31 12:00:00,154 - INFO - Feature preparation completed. Shape: (43824, 5)
+2025-01-31 12:00:00,155 - INFO - Training anomaly detection model...
+2025-01-31 12:00:03,639 - INFO - Model training completed successfully
+2025-01-31 12:00:05,060 - INFO - Generated predictions for 43824 samples
+2025-01-31 12:00:05,106 - ERROR - Error in anomaly analysis: 'Date Time Hour Beginning'
+2025-01-31 12:00:05,107 - ERROR - Error processing data: 'Date Time Hour Beginning'
+2025-01-31 12:09:04,699 - INFO - Successfully loaded data from data\ESK10705.csv. Shape: (43824, 42)
+2025-01-31 12:09:04,699 - INFO - Columns in dataset: ['Date Time Hour Beginning', 'Original Res Forecast before Lockdown', 'Residual Forecast', 'RSA Contracted Forecast', 'Dispatchable Generation', 'Residual Demand', 'RSA Contracted Demand', 'International Exports', 'International Imports', 'Thermal Generation', 'Nuclear Generation', 'Eskom Gas Generation', 'Eskom OCGT Generation', 'Hydro Water Generation', 'Pumped Water Generation', 'ILS Usage', 'Manual Load_Reduction(MLR)', 'IOS Excl ILS and MLR', 'Dispatchable IPP OCGT', 'Eskom Gas SCO', 'Eskom OCGT SCO', 'Hydro Water SCO', 'Pumped Water SCO Pumping', 'Wind', 'PV', 'CSP', 'Other RE', 'Total RE', 'Wind Installed Capacity', 'PV Installed Capacity', 'CSP Installed Capacity', 'Other RE Installed Capacity', 'Total RE Installed Capacity', 'Installed Eskom Capacity', 'Total PCLF', 'Total UCLF', 'Total OCLF', 'Total UCLF+OCLF', 'Non Comm Sentout', 'Drakensberg Gen Unit Hours', 'Palmiet Gen Unit Hours', 'Ingula Gen Unit Hours']
+2025-01-31 12:09:04,737 - INFO - Successfully extracted datetime index.
+2025-01-31 12:09:04,738 - INFO - Starting data cleaning process...
+2025-01-31 12:09:05,208 - INFO - Data cleaning completed. Shape: (43824, 41)
+2025-01-31 12:09:05,214 - INFO - Starting feature engineering...
+2025-01-31 12:09:05,451 - INFO - Feature engineering completed successfully
+2025-01-31 12:09:05,456 - INFO - Preparing features for modeling...
+2025-01-31 12:09:05,499 - INFO - Feature preparation completed. Shape: (43824, 5)
+2025-01-31 12:09:05,500 - INFO - Training anomaly detection model...
+2025-01-31 12:09:08,843 - INFO - Model training completed successfully
+2025-01-31 12:09:10,323 - INFO - Generated predictions for 43824 samples
+2025-01-31 12:09:10,327 - ERROR - Error processing data: 'Series' object has no attribute 'hour'
+2025-01-31 12:09:10,327 - ERROR - Failed to process data: 'Series' object has no attribute 'hour'
+2025-01-31 12:23:45,757 - INFO - Successfully loaded data from data\ESK10705.csv. Shape: (43824, 42)
+2025-01-31 12:23:45,766 - INFO - Columns in dataset: ['Date Time Hour Beginning', 'Original Res Forecast before Lockdown', 'Residual Forecast', 'RSA Contracted Forecast', 'Dispatchable Generation', 'Residual Demand', 'RSA Contracted Demand', 'International Exports', 'International Imports', 'Thermal Generation', 'Nuclear Generation', 'Eskom Gas Generation', 'Eskom OCGT Generation', 'Hydro Water Generation', 'Pumped Water Generation', 'ILS Usage', 'Manual Load_Reduction(MLR)', 'IOS Excl ILS and MLR', 'Dispatchable IPP OCGT', 'Eskom Gas SCO', 'Eskom OCGT SCO', 'Hydro Water SCO', 'Pumped Water SCO Pumping', 'Wind', 'PV', 'CSP', 'Other RE', 'Total RE', 'Wind Installed Capacity', 'PV Installed Capacity', 'CSP Installed Capacity', 'Other RE Installed Capacity', 'Total RE Installed Capacity', 'Installed Eskom Capacity', 'Total PCLF', 'Total UCLF', 'Total OCLF', 'Total UCLF+OCLF', 'Non Comm Sentout', 'Drakensberg Gen Unit Hours', 'Palmiet Gen Unit Hours', 'Ingula Gen Unit Hours']
+2025-01-31 12:23:45,832 - INFO - Successfully extracted datetime index.
+2025-01-31 12:23:45,833 - INFO - Starting data cleaning process...
+2025-01-31 12:23:46,311 - INFO - Data cleaning completed. Shape: (43824, 41)
+2025-01-31 12:23:46,313 - INFO - Starting feature engineering...
+2025-01-31 12:23:46,578 - INFO - Feature engineering completed successfully
+2025-01-31 12:23:46,581 - INFO - Preparing features for modeling...
+2025-01-31 12:23:46,610 - INFO - Feature preparation completed. Shape: (43824, 5)
+2025-01-31 12:23:46,611 - INFO - Training anomaly detection model...
+2025-01-31 12:23:49,907 - INFO - Model training completed successfully
+2025-01-31 12:23:51,286 - INFO - Generated predictions for 43824 samples
+2025-01-31 12:23:51,289 - ERROR - Error processing data: 'Series' object has no attribute 'hour'
+2025-01-31 12:23:51,289 - ERROR - Failed to process data: 'Series' object has no attribute 'hour'
