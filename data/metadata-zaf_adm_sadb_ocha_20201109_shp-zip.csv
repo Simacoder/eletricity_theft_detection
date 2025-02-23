@@ -1,0 +1,14 @@
+Field,Label,Value
+created,Created,2018-12-27T15:02:45.813197
+description,Description,South Africa administrative levels 0-4 shapefiles
+format,File Format,SHP
+download_url,Download URL,https://data.humdata.org/dataset/061d4492-56e8-458c-a3fb-e7950991adf0/resource/f5b08257-8d03-48dc-92c8-aaa4fb7285f0/download/zaf_adm_sadb_ocha_20201109_shp.zip
+id,Resource ID,f5b08257-8d03-48dc-92c8-aaa4fb7285f0
+last_modified,Updated,2020-11-10T12:32:02.603296
+metadata_modified,Metadata Updated,2023-11-08T22:06:44.132292
+microdata,Microdata,False
+dataset_id,Dataset ID,061d4492-56e8-458c-a3fb-e7950991adf0
+resource_type,Resource Type,file.upload
+name,Resource Name,zaf_adm_sadb_ocha_20201109_SHP.zip
+mimetype,MIME Type,application/x-zip-compressed
+size,Size,87.8M
