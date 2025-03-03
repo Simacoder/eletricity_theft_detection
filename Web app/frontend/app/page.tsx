@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -16,7 +17,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="Home">
-      <h1>{message ? message : 'Loading...'}</h1>
+      <h1 className='text-green-500 font-bold text-3xl'>{message ? message : 'Loading...'}</h1>
     </div>
   );
 }
