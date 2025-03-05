@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Meter, Anomaly, UserSettings, Alert, Documentation
+from .models import UserSettings, Alert, Documentation, MeterData, Notification, Anomaly
 from rest_framework_simplejwt.tokens import RefreshToken
 
 class UserRegisterSerializer(serializers.ModelSerializer):
@@ -32,22 +32,25 @@ class UserLoginSerializer(serializers.Serializer):
             }
         raise serializers.ValidationError("Invalid credentials")
 
-class MeterSerializer(serializers.ModelSerializer):
+class MeterDataSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Meter
-        fields = ['meter_id', 'readings']
-
+        model = MeterData
+        fields = ['meter_id', 'timestamp', 'value', 'consumption_pattern']
+        
 class AnomalySerializer(serializers.ModelSerializer):
     class Meta:
         model = Anomaly
-        fields = ['meter', 'anomaly_type', 'timestamp', 'severity']
+        fields = ['meter', 'anomaly_type', 'severity', 'timestamp']
 
 class AlertSerializer(serializers.ModelSerializer):
-    anomaly = AnomalySerializer()
-
     class Meta:
         model = Alert
-        fields = ['id', 'anomaly', 'alert_message', 'alert_severity', 'alert_timestamp']
+        fields = ['meter', 'anomaly_type', 'severity', 'timestamp']
+
+class NotificationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Notification
+        fields = ['user', 'message', 'timestamp', 'is_read']
 
 class UserSettingsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -58,4 +61,9 @@ class DocumentationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Documentation
         fields = ['title', 'content']
+
+
+
+
+
 
