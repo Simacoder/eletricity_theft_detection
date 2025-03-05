@@ -10,3 +10,4 @@ channels==4.0.0
 daphne==4.0.0
 gunicorn==21.2.0
 python-dotenv==1.0.1
+rest_framework_simplejwt.tokens==4.8.0
