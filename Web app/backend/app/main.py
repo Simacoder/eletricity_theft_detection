@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import auth, meter_data, alerts, reports, settings
+from .api import auth, meter_data, alerts, reports, settings
 from .core.database import engine
 from .models import Base
 
