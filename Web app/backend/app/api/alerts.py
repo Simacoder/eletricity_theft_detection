@@ -1,0 +1,39 @@
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from pydantic import BaseModel
+from typing import List
+from ..models.alerts import Alert
+from ..crud.alerts import create_alert, get_alerts_by_meter_id, get_all_alerts
+from ..core.database import get_db
+
+router = APIRouter()
+
+class AlertCreate(BaseModel):
+    meter_id: int
+    anomaly_id: int
+    alert_message: str
+    alert_severity: str
+
+class AlertResponse(AlertCreate):
+    id: int
+    alert_timestamp: str
+
+@router.post("/", response_model=AlertResponse)
+async def create_new_alert(alert_data: AlertCreate, db: Session = Depends(get_db)):
+    created_alert = create_alert(db, alert_data)
+    
+    return created_alert
+
+# Get alerts for a specific meter
+@router.get("/meter/{meter_id}", response_model=List[AlertResponse])
+async def get_alerts_for_meter(meter_id: int, db: Session = Depends(get_db)):
+    alerts = get_alerts_by_meter_id(db, meter_id)
+    if not alerts:
+        raise HTTPException(status_code=404, detail="No alerts found for this meter")
+    return alerts
+
+# Get all alerts
+@router.get("/", response_model=List[AlertResponse])
+async def get_all_alerts(db: Session = Depends(get_db)):
+    alerts = get_all_alerts(db)
+    return alerts

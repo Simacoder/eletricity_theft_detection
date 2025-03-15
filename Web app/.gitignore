@@ -1,0 +1,8 @@
+# .env file containing sensitive information
+/backend/app/.env
+
+# Python bytecode
+*.pyc
+
+# Virtual environment
+/venv/
