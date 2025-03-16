@@ -2,7 +2,6 @@ fastapi
 uvicorn
 sqlalchemy
 psycopg2-binary
-pydantic
 python-dotenv
 passlib[bcrypt]
 pyjwt
@@ -15,3 +14,4 @@ joblib
 python-jose
 scikit-learn
 cython
+pydantic-settings

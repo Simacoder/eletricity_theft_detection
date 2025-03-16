@@ -1,5 +1,6 @@
 import os
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
+
 
 class Settings(BaseSettings):
     DATABASE_URL: str = "postgresql://user:phandas2024@localhost:5432/db_name"
