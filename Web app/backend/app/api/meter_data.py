@@ -5,12 +5,12 @@ from typing import List
 from ..models.meter_data import MeterData
 from ..crud.meter_data import create_meter_data, get_meter_data_by_id, get_all_meter_data
 from ..core.database import get_db
-from sklearn.externals import joblib
+import joblib
 import numpy as np
 
 router = APIRouter()
 
-model = joblib.load("fraud_detection_model.pkl")
+model = joblib.load("models/fraud_detection_model.pkl")
 
 # Pydantic model for request validation
 class MeterDataCreate(BaseModel):
