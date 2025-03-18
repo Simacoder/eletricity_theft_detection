@@ -24,4 +24,4 @@ app.include_router(settings.router, prefix="/settings", tags=["Settings"])
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to the Electricity Fraud Detection API!"}
+    return {"message": "Welcome to the Electricity Fraud Detection!"}
