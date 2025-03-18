@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from ..models import settings as settings_model
 from ..schemas import settings as settings_schema
 
-def create_or_update_settings(db: Session, user_id: int, settings: settings_schema.SettingsCreate):
+def create_or_update_settings(db: Session, user_id: int, settings: settings_schema.UserSettingsCreate):
     db_settings = db.query(settings_model.Settings).filter(settings_model.Settings.user_id == user_id).first()
     
     if db_settings:
@@ -36,3 +36,17 @@ def delete_settings(db: Session, user_id: int):
         db.delete(db_settings)
         db.commit()
     return db_settings
+
+def get_user_settings(db: Session, user_id: int):
+    settings = db.query(settings_model.Settings).filter(settings_model.Settings.user_id == user_id).first()
+    return settings
+
+def update_user_settings(db: Session, user_id: int, settings_data: dict):
+    user_settings = db.query(settings_model.Settings).filter(settings_model.Settings.user_id == user_id).first()
+    if user_settings:
+        for key, value in settings_data.items():
+            setattr(user_settings, key, value)
+        db.commit()
+        return user_settings
+    else:
+        return None

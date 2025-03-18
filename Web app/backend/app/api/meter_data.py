@@ -7,10 +7,15 @@ from ..crud.meter_data import create_meter_data, get_meter_data_by_id, get_all_m
 from ..core.database import get_db
 import joblib
 import numpy as np
+import os
 
 router = APIRouter()
 
-model = joblib.load("models/fraud_detection_model.pkl")
+model_path = "backend/app/models/fraud_detection_model.pkl"
+if os.path.exists(model_path):
+    model = joblib.load(model_path)
+else:
+    raise FileNotFoundError(f"Model file '{model_path}' not found!")
 
 # Pydantic model for request validation
 class MeterDataCreate(BaseModel):

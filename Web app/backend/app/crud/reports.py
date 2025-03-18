@@ -35,6 +35,9 @@ def update_report(db: Session, report_id: int, report: reports_schema.ReportUpda
     
     return db_report
 
+def get_all_reports(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(reports_model.Report).offset(skip).limit(limit).all()
+
 def delete_report(db: Session, report_id: int):
     db_report = db.query(reports_model.Report).filter(reports_model.Report.report_id == report_id).first()
     if db_report:

@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
 from pydantic import BaseModel
-from app.models.settings import UserSettings
-from app.crud.settings import get_user_settings, update_user_settings
+from ..models.settings import UserSettings
+from ..crud.settings import get_user_settings, update_user_settings
 from ..core.database import get_db
 
 # Initialize the router

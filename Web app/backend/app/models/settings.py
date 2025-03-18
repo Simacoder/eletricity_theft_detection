@@ -13,3 +13,7 @@ class Settings(Base):
 
     user = relationship("User", back_populates="settings")
 
+class UserSettings:
+    def __init__(self, setting1, setting2):
+        self.setting1 = setting1
+        self.setting2 = setting2

@@ -37,6 +37,9 @@ def update_alert(db: Session, alert_id: int, alert: alerts_schema.AlertUpdate):
     
     return db_alert
 
+def get_all_alerts(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(alerts_model.Alert).offset(skip).limit(limit).all()
+
 def delete_alert(db: Session, alert_id: int):
     db_alert = db.query(alerts_model.Alert).filter(alerts_model.Alert.alert_id == alert_id).first()
     if db_alert:
