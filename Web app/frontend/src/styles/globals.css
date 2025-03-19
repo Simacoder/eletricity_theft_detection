@@ -71,18 +71,6 @@ body.dark-mode .text-black {
   }
 }
 
-.btn {
-  @apply bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200;
-}
-
-.btn-danger {
-  @apply bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 transition duration-200;
-}
-
-.btn-outline {
-  @apply border-2 border-blue-600 text-blue-600 py-2 px-4 rounded-md hover:bg-blue-600 hover:text-white transition duration-200;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -99,3 +87,4 @@ html {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
