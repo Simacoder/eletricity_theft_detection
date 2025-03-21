@@ -8,7 +8,9 @@ from sqlalchemy.exc import SQLAlchemyError
 async def create_user(db: AsyncSession, user: user_schema.UserCreate):
     try:
         db_user = user_model.User(
+            
             username=user.username,
+            email=user.email,
             password=get_password_hash(user.password),
         )
         async with db.begin():

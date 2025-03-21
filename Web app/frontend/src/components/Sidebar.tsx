@@ -13,8 +13,8 @@ const Sidebar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link href="/meter-data" className="block py-2 px-4 hover:bg-blue-700 rounded">
-              Meter Data
+            <Link href="/meterData" className="block py-2 px-4 hover:bg-blue-700 rounded">
+            Meter Data
             </Link>
           </li>
           <li>

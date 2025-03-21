@@ -11,7 +11,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -33,6 +33,11 @@ app.include_router(meter_data.router, prefix="/api/meter_data", tags=["Meter Dat
 app.include_router(alerts.router, prefix="/api/alerts", tags=["Alerts"])
 app.include_router(reports.router, prefix="/api/reports", tags=["Reports"])
 app.include_router(settings.router, prefix="/api/settings", tags=["Settings"])
+
+@app.on_event("startup")
+async def print_routes():
+    for route in app.routes:
+        print(route.path)
 
 @app.get("/")
 def read_root():

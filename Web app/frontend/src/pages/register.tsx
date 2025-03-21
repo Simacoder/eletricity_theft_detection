@@ -19,9 +19,14 @@ const Register: React.FC = () => {
         body: JSON.stringify({ name, email, password }),
       });
 
-      if (!response.ok) throw new Error('Registration failed');
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData?.message || 'Registration failed');
+      }
+
+      const data = await response.json();
+      console.log('Registration successful', data);
       
-      await response.json();
       router.push('/login');
     } catch (error) {
       if (error instanceof Error) {
@@ -88,4 +93,3 @@ const Register: React.FC = () => {
 };
 
 export default Register;
-
