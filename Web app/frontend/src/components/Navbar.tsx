@@ -1,22 +1,26 @@
-// frontend/src/components/Navbar.tsx
-
 import React from 'react';
 import Link from 'next/link';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-gray-800 text-white p-4">
-      <div className="flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold">Fraud Detection</Link>
+    <header className="bg-blue-800 text-white p-4 flex justify-between items-center">
+      <Link href="/" className="text-2xl font-bold">
+        Fraud Detection System
+      </Link>
+      <nav>
         <ul className="flex space-x-6">
-          <li><Link href="/" className="hover:text-blue-300">Home</Link></li>
-          <li><Link href="/dashboard" className="hover:text-blue-300">Dashboard</Link></li>
-          <li><Link href="/meterData" className="hover:text-blue-300">Meter Data</Link></li>
-          <li><Link href="/alerts" className="hover:text-blue-300">Alerts</Link></li>
-          <li><Link href="/reports" className="hover:text-blue-300">Reports</Link></li>
+          <li>
+            <Link href="/" className="hover:text-blue-300">Home</Link>
+          </li>
+          <li>
+            <Link href="/login" className="hover:text-blue-300">Login</Link>
+          </li>
+          <li>
+            <Link href="/register" className="hover:text-blue-300">Register</Link>
+          </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

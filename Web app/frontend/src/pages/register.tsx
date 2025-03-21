@@ -1,65 +1,91 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import Button from '../components/Button';
 
-const RegisterPage: React.FC = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const Register: React.FC = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const router = useRouter();
 
-  const handleRegister = async () => {
-    if (username && password && email) {
-      alert('User registered successfully');
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      if (!response.ok) throw new Error('Registration failed');
+      
+      await response.json();
       router.push('/login');
-    } else {
-      alert('All fields are required!');
+    } catch (error) {
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        alert('An unknown error occurred');
+      }
     }
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="p-8 bg-white rounded-lg shadow-lg w-96">
-        <h2 className="text-3xl font-bold mb-4 text-center">Register</h2>
+    <div className="min-h-screen flex justify-center items-center bg-gray-100">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white p-6 rounded shadow-lg w-96"
+      >
+        <h1 className="text-2xl font-semibold mb-4">Register</h1>
+
         <div className="mb-4">
-          <label className="block text-sm font-semibold mb-2" htmlFor="username">Username</label>
+          <label htmlFor="name" className="block text-sm font-medium">Name</label>
           <input
             type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="w-full p-3 border rounded-md"
-            placeholder="Enter your username"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full px-4 py-2 border rounded mt-1"
+            required
           />
         </div>
+
         <div className="mb-4">
-          <label className="block text-sm font-semibold mb-2" htmlFor="email">Email</label>
+          <label htmlFor="email" className="block text-sm font-medium">Email</label>
           <input
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 border rounded-md"
-            placeholder="Enter your email"
+            className="w-full px-4 py-2 border rounded mt-1"
+            required
           />
         </div>
+
         <div className="mb-4">
-          <label className="block text-sm font-semibold mb-2" htmlFor="password">Password</label>
+          <label htmlFor="password" className="block text-sm font-medium">Password</label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 border rounded-md"
-            placeholder="Enter your password"
+            className="w-full px-4 py-2 border rounded mt-1"
+            required
           />
         </div>
-        <div className="mt-6">
-          <Button text="Register" onClick={handleRegister} />
-        </div>
-      </div>
+
+        <button
+          type="submit"
+          className="w-full py-2 mt-4 bg-green-600 text-white rounded"
+        >
+          Register
+        </button>
+      </form>
     </div>
   );
 };
 
-export default RegisterPage;
+export default Register;
+

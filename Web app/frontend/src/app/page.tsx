@@ -1,10 +1,10 @@
 "use client"
 import React from 'react';
+import Layout from '@/components/Layout';
+import Button from '@/components/Button';
 import { useRouter } from 'next/navigation';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
-const HomePage: React.FC = () => {
+const Home: React.FC = () => {
   const router = useRouter();
 
   const handleLoginClick = () => {
@@ -16,36 +16,30 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
-
-      <main className="flex justify-center items-center flex-col py-20">
-        <h1 className="text-4xl font-semibold text-center text-blue-600">
+    <Layout>
+      <div className="py-20 px-4 sm:px-8 md:px-16">
+        <h1 className="text-4xl font-semibold text-center text-blue-600 sm:text-5xl">
           Welcome to the Electricity Fraud Detection System
         </h1>
-        <p className="text-xl text-center text-gray-700 mt-4">
+        <p className="text-xl text-center text-gray-700 mt-4 sm:text-2xl">
           Detect and analyze electricity fraud using our advanced AI-powered system.
         </p>
 
         <div className="mt-8 flex justify-center gap-8">
-          <button
+          <Button
+            text="Login"
             onClick={handleLoginClick}
-            className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-          >
-            Login
-          </button>
-          <button
+            variant="primary"
+          />
+          <Button
+            text="Register"
             onClick={handleRegisterClick}
-            className="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700"
-          >
-            Register
-          </button>
+            variant="secondary"
+          />
         </div>
-      </main>
-
-      <Footer />
-    </div>
+      </div>
+    </Layout>
   );
 };
 
-export default HomePage;
+export default Home;

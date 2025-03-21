@@ -1,57 +1,66 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-import Button from '../components/Button';
 import { useUserStore } from '../store/useUserStore';
+import { useRouter } from 'next/router';
 
-const LoginPage: React.FC = () => {
-  const [username, setUsername] = useState('');
+const Login: React.FC = () => {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { setUser } = useUserStore();
+  const { login, error, isLoading } = useUserStore();
   const router = useRouter();
 
-  const handleLogin = async () => {
-    if (username === 'admin' && password === 'admin') {
-      const user = { username, role: 'admin' };
-      localStorage.setItem('user', JSON.stringify(user));
-      setUser(user);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await login(email, password);
+    if (!error) {
       router.push('/dashboard');
-    } else {
-      alert('Invalid credentials');
     }
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="p-8 bg-white rounded-lg shadow-lg w-96">
-        <h2 className="text-3xl font-bold mb-4 text-center">Login</h2>
+    <div className="min-h-screen flex justify-center items-center bg-gray-100">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white p-6 rounded shadow-lg w-96"
+      >
+        <h1 className="text-2xl font-semibold mb-4">Login</h1>
+
         <div className="mb-4">
-          <label className="block text-sm font-semibold mb-2" htmlFor="username">Username</label>
+          <label htmlFor="email" className="block text-sm font-medium">Email</label>
           <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="w-full p-3 border rounded-md"
-            placeholder="Enter your username"
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full px-4 py-2 border rounded mt-1"
+            required
           />
         </div>
+
         <div className="mb-4">
-          <label className="block text-sm font-semibold mb-2" htmlFor="password">Password</label>
+          <label htmlFor="password" className="block text-sm font-medium">Password</label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 border rounded-md"
-            placeholder="Enter your password"
+            className="w-full px-4 py-2 border rounded mt-1"
+            required
           />
         </div>
-        <div className="mt-6">
-          <Button text="Login" onClick={handleLogin} />
-        </div>
-      </div>
+
+        {error && <p className="text-red-500 text-sm">{error}</p>}
+
+        <button
+          type="submit"
+          disabled={isLoading}
+          className={`w-full py-2 mt-4 bg-blue-600 text-white rounded ${isLoading && 'opacity-50'}`}
+        >
+          {isLoading ? 'Logging In...' : 'Login'}
+        </button>
+      </form>
     </div>
   );
 };
 
-export default LoginPage;
+export default Login;
+

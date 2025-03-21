@@ -1,25 +1,24 @@
-// frontend/src/pages/_app.tsx
+import React, { useEffect } from 'react';
+import { useUserStore } from '../store/useUserStore';
+import Layout from '../components/Layout';
 
-import { AppProps } from 'next/app';
-import '../styles/globals.css';  // Global styles
-import { useEffect } from 'react';
-import { useUserStore } from '../store/useUserStore'; // Zustand store for user auth state
-import { useRouter } from 'next/router';
+import type { AppProps } from 'next/app';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const { setUser } = useUserStore();
-  const router = useRouter();
+function App({ Component, pageProps }: AppProps) {
+  const { user, fetchUser, isAuthenticated } = useUserStore();
+ 
 
   useEffect(() => {
-    const userData = localStorage.getItem('user');
-    if (userData) {
-      setUser(JSON.parse(userData));  // Set the user data in the state
-    } else {
-      router.push('/login');  // Redirect to login page if no user data is found
+    if (!user && !isAuthenticated) {
+      fetchUser();
     }
-  }, []);
+  }, [user, isAuthenticated, fetchUser]);
 
-  return <Component {...pageProps} />;
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
-export default MyApp;
+export default App;

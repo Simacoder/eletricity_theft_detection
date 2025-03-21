@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from .model_loader import load_model
+from typing import Dict
+from ..model_loader import load_model
 
 model = load_model()
 if model is None:
@@ -10,18 +11,17 @@ class MeterDataRequest(BaseModel):
     meter_id: int
     daily_consumption: float
     base_consumption: float
-    other_features: dict
+    other_features: Dict[str, float]
 
 router = APIRouter()
 
-@router.post("/predict_fraud")
+@router.post("/api/predict_fraud")
 async def predict_fraud(data: MeterDataRequest):
-    """Predict if a meter's data is fraudulent or not"""
     try:
         input_features = [
             data.daily_consumption,
             data.base_consumption,
-            *data.other_features.values(), 
+            *data.other_features.values(),
         ]
         
         prediction = model.predict([input_features])
@@ -30,3 +30,4 @@ async def predict_fraud(data: MeterDataRequest):
     
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Error predicting fraud: {e}")
+
