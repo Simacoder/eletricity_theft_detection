@@ -1,31 +1,36 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
-import Footer from '../components/Footer';
+import React, { useEffect } from 'react';
+import { useUserStore } from '../store/useUserStore';
+import { useRouter } from 'next/router';
 
-const DashboardPage: React.FC = () => {
+const Dashboard: React.FC = () => {
+  const { user, logout, isAuthenticated } = useUserStore();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push('/login');
+    }
+  }, [isAuthenticated, router]);
+
+  if (!user) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className="flex flex-col h-screen">
-      <Navbar />
-      <div className="flex flex-1">
-        <Sidebar />
-        <main className="flex-1 p-6">
-          <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-4 bg-white rounded-lg shadow">
-              <h2 className="text-xl font-semibold mb-4">Meter Data Overview</h2>
-              <p>No data available yet. Connect to your meter to start monitoring.</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow">
-              <h2 className="text-xl font-semibold mb-4">Fraud Detection</h2>
-              <p>No fraud detected yet. Monitoring in progress.</p>
-            </div>
-          </div>
-        </main>
-      </div>
-      <Footer />
+    <div className="p-6">
+      <h1>Welcome, {user.name}</h1>
+      <p>Your email: {user.email}</p>
+      <p>Your role: {user.role}</p>
+
+      <button
+        onClick={() => logout()}
+        className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
+      >
+        Logout
+      </button>
     </div>
   );
 };
 
-export default DashboardPage;
+export default Dashboard;
+

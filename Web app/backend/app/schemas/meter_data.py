@@ -1,10 +1,26 @@
 from pydantic import BaseModel
+from datetime import datetime
+from typing import Optional
 
 class MeterDataCreate(BaseModel):
-    field_1: str
-    field_2: int
+    meter_id: int
+    reading_time: datetime
+    value: float
+    consumption_pattern: str
+
+    class Config:
+        from_attributes = True
 
 class MeterDataUpdate(BaseModel):
-    field_1: str
-    field_2: int 
-    
+    reading_time: Optional[datetime] = None
+    value: Optional[float] = None
+    consumption_pattern: Optional[str] = None
+
+    class Config:
+        from_attributes = True
+
+class MeterDataResponse(MeterDataCreate):
+    id: int
+
+    class Config:
+        from_attributes = True

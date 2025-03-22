@@ -15,3 +15,5 @@ python-jose
 scikit-learn
 cython
 pydantic-settings
+asyncpg
+pydantic[email]

@@ -1,14 +1,29 @@
 import { create } from 'zustand';
 
-interface User {
+export interface User {
   id: string;
   name: string;
   email: string;
   role: string;
   token: string;
+  reports: Report[];
+  emailNotifications: boolean;
+  darkMode: boolean; 
+  meterData: {
+    id: string;
+    type: string;
+    value: string | number;
+    timestamp: string;
+  }[];
 }
 
-interface UserStore {
+export interface Report {
+  id: string;
+  title: string;
+  date: string;
+}
+
+export interface UserStore {
   user: User | null;
   isLoading: boolean;
   error: string | null;
@@ -19,6 +34,7 @@ interface UserStore {
   fetchUser: () => Promise<void>;
   setLoading: (loading: boolean) => void;
   setError: (error: string | null) => void;
+  setUser: (user: User | null) => void;
 }
 
 interface LoginResponse {
@@ -35,7 +51,7 @@ export const useUserStore = create<UserStore>((set) => ({
   login: async (email: string, password: string): Promise<void> => {
     set({ isLoading: true });
     try {
-      const response = await fetch('http://127.0.0.1:8000//api/auth/login', {
+      const response = await fetch('http://127.0.0.1:8000/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,7 +85,7 @@ export const useUserStore = create<UserStore>((set) => ({
       const token = localStorage.getItem('auth_token');
       if (!token) throw new Error('No token found');
 
-      const response = await fetch('/api/auth/me', {
+      const response = await fetch('http://127.0.0.1:8000/api/auth/me', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -92,4 +108,5 @@ export const useUserStore = create<UserStore>((set) => ({
   setLoading: (loading: boolean): void => set({ isLoading: loading }),
 
   setError: (error: string | null): void => set({ error }),
+  setUser: (user: User | null): void => set({ user }),
 }));

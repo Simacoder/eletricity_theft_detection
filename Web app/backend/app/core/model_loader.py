@@ -1,7 +1,6 @@
 import joblib
 import os
-from sklearn.ensemble import RandomForestClassifier
-from typing import Any
+from typing import Any, List
 
 MODEL_PATH = os.path.join(os.getcwd(), "fraud_detection_model.pkl")
 
@@ -13,8 +12,8 @@ def load_model() -> Any:
     model = joblib.load(MODEL_PATH)
     return model
 
-def predict_fraud(model: Any, features: list) -> int:
-       
+def predict_fraud(model: Any, features: List[float]) -> int:
+
     prediction = model.predict([features])
     return prediction[0]
 
@@ -22,3 +21,4 @@ def get_fraud_detection_model() -> Any:
 
     model = load_model()
     return model
+
